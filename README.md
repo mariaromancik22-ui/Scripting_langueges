@@ -177,16 +177,3 @@ ENEMY_POSITIONS = [(360, 200), (600, 440), (240, 440), (680, 120)]
 
 ---
 
-## Зависимости
-
-Убедитесь, что установлен Python 3.12+ и Pygame 2.6.1:
-
-```bash
-python3 -c "import pygame; print(pygame.__version__)"
-```
-
-Если Pygame не установлен:
-
-```bash
-pip install pygame
-```
