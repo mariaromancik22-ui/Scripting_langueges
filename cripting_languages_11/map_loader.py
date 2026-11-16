@@ -22,7 +22,7 @@ def load_map(filename="radar_map.json"):
     ]
     
     try:
-        with open(filename, "r", encoding="utf-8") as f:
+        with open(filename, "r", encoding="utf-8") as f: #чтение r и load. запись - w/a и dump
             data = json.load(f)
             return data["level"], data.get("fade_speed", 8)
     except FileNotFoundError:
@@ -31,7 +31,5 @@ def load_map(filename="radar_map.json"):
     except json.JSONDecodeError:
         print(f"ОШИБКА: Файл {filename} повреждён. Загружена карта по умолчанию.")
         return default_level, 8
-    except KeyError:
-        print(f"ОШИБКА: В файле {filename} нет нужных ключей. Загружена карта по умолчанию.")
-        return default_level, 8
+ 
 

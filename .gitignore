@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Token
+.env
+py_bot/.env
+
+# Cash and sessions
+__pycache__/
+py_bot/sessions/
+py_bot/bot_flight.log

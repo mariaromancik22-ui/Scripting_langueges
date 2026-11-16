@@ -5,7 +5,7 @@ from constants import TILE_SIZE, COLORS
 def build_walls(level_matrix): # добавили аргумент
     walls = []
     rows = len(level_matrix)       # вычисляем строки из матрицы
-    cols = len(level_matrix[0])    #вычисляем колонки из матрицы
+    cols = len(level_matrix[0])    # вычисляем колонки из матрицы
     
     for gy in range(rows):
         for gx in range(cols):

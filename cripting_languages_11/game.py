@@ -49,11 +49,9 @@ def main():
     enemies = []
     waves = []
 
-    # переменные для ЛР 2 (счётчик и время)
+    # переменные для ЛР 2 
     waves_fired = 0
     start_time = 0
-
-    # НОВЫЕ переменные для ввода имени
     player_name = ""
     final_time = 0
 
@@ -77,8 +75,8 @@ def main():
                     win = False
                    
 
-                    waves_fired = 0 # Счётчик импульсов
-                    start_time = pygame.time.get_ticks() # Засекаем время старта
+                    waves_fired = 0 # счётчик импульсов
+                    start_time = pygame.time.get_ticks() # засекаем время старта
                     state = STATE_PLAY
 
                 elif state == STATE_OVER and event.key == pygame.K_r: # рестарт
@@ -89,17 +87,17 @@ def main():
                    waves_fired += 1
 
 
-                # Ввод имени после победы
+                # ввод имени после победы
                 elif state == STATE_ENTER_NAME and event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER: 
-                        # Нажат Enter — сохраняем результат и переходим на финальный экран
+                        # нажат Enter — сохраняем результат и переходим на финальный экран
                         log_result(player_name, waves_fired, final_time)
                         state = STATE_OVER
                     elif event.key == pygame.K_BACKSPACE: 
-                        # Нажат Backspace — удаляем последний символ
+                        # нажат Backspace — удаляем последний символ
                         player_name = player_name[:-1]
                     else:
-                        # Добавляем введённый символ (ограничим длину 15 символами)
+                        # добавляем введённый символ (ограничим длину 15 символами)
                         if event.unicode.isprintable() and len(player_name) < 15:
                             player_name += event.unicode
 
@@ -145,7 +143,7 @@ def main():
                     win = True
                     final_time = (pygame.time.get_ticks() - start_time) / 1000
                     player_name = "" # очищаем поле ввода
-                    state = STATE_ENTER_NAME # <-- переходим на экран ввода имени
+                    state = STATE_ENTER_NAME # переходим на экран ввода имени
 
             # отрисовка
             screen.fill(COLORS["bg"])
@@ -156,27 +154,27 @@ def main():
                 wave.draw(screen)
         
         elif state == STATE_ENTER_NAME:
-            # Отрисовка экрана ввода имени
+            # отрисовка экрана ввода имени
             screen.fill(COLORS["bg"])
             
-            # Заголовок
+            # заголовок
             win_text = big_font.render(GAME_MESSAGES["win"], True, (0, 255, 100))
             screen.blit(win_text, (WINDOW_WIDTH // 2 - win_text.get_width() // 2, 150))
             
-            # Подсказка
+            # подсказка
             prompt = font.render("Введите имя и нажмите Enter:", True, COLORS["text"])
             screen.blit(prompt, (WINDOW_WIDTH // 2 - prompt.get_width() // 2, 250))
             
-            # Прямоугольник поля ввода
+            # прямоугольник поля ввода
             input_rect = pygame.Rect(WINDOW_WIDTH // 2 - 150, 300, 300, 40)
-            pygame.draw.rect(screen, (40, 40, 40), input_rect) # Фон поля
-            pygame.draw.rect(screen, COLORS["wave"], input_rect, 2) # Рамка поля
+            pygame.draw.rect(screen, (40, 40, 40), input_rect) # фон поля
+            pygame.draw.rect(screen, COLORS["wave"], input_rect, 2) # рамка поля
             
-            # Введённый текст + мигающий курсор (просто черта)
+            # введённый текст + мигающий курсор (просто черта)
             name_text = font.render(player_name + "|", True, COLORS["text"])
             screen.blit(name_text, (input_rect.x + 10, input_rect.y + 10))
             
-            # Показываем статистику
+            # показываем статистику
             time_text = font.render(f"Время: {final_time:.1f} сек. | Импульсов: {waves_fired}", True, COLORS["text"])
             screen.blit(time_text, (WINDOW_WIDTH // 2 - time_text.get_width() // 2, 370))
 

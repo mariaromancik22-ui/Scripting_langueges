@@ -8,10 +8,6 @@ CSV_PATH = Path(__file__).with_name("radar_records.csv")
 
 
 def log_result(name, wave_count, time_sec):
-    """
-    1. Записывает результат в текстовый лог (radar_log.txt).
-    2. Дописывает результат в таблицу рекордов (radar_records.csv).
-    """
     # запись в текстовый файл
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(f"Игрок: {name} | Импульсов: {wave_count} | Время: {time_sec:.1f} сек.\n")
