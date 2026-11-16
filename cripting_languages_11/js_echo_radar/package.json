@@ -1,0 +1,10 @@
+{
+  "name": "echo-radar-js",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Математическое ядро игры Эхо-Локатор на JavaScript",
+  "main": "selftest.js",
+  "scripts": {
+    "test": "node selftest.js"
+  }
+}

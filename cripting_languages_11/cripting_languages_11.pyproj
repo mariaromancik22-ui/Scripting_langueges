@@ -42,9 +42,20 @@
     <Compile Include="player.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="js_echo_radar\" />
+    <Folder Include="js_echo_radar\js\" />
     <Folder Include="py_bot\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js_echo_radar\js\constants.js" />
+    <Content Include="js_echo_radar\js\enemy.js" />
+    <Content Include="js_echo_radar\js\level.js" />
+    <Content Include="js_echo_radar\js\math.js" />
+    <Content Include="js_echo_radar\js\player.js" />
+    <Content Include="js_echo_radar\js\rect.js" />
+    <Content Include="js_echo_radar\js\wave.js" />
+    <Content Include="js_echo_radar\package.json" />
+    <Content Include="js_echo_radar\selftest.js" />
     <Content Include="py_bot\env." />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
