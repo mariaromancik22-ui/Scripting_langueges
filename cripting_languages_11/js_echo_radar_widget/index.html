@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Эхо-Локатор — Веб-виджет</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Эхо-Локатор</h1>
+    <canvas id="game" width="800" height="600"></canvas>
+
+    <!-- Панель показателей (HUD) -->
+    <div id="hud">
+        Волн активно: <span id="wave-count">0</span> |
+        Время: <span id="time">0.0</span> сек |
+        Импульсов: <span id="shots">0</span>
+    </div>
+    <div id="game-over" style="display: none; color: red; font-size: 24px; margin-top: 20px;">
+        Вы проиграли! Нажмите R для рестарта.
+    </div>
+
+    <!-- Кнопка для сценария -->
+    <div class="controls">
+        <button data-scenario="spawnWave">Выпустить волну</button>
+    </div>
+
+    <!-- Подключаем наш главный скрипт как модуль -->
+    <script type="module" src="js/widget.js"></script>
+</body>
+</html>

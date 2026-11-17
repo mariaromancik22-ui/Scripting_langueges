@@ -44,6 +44,9 @@
   <ItemGroup>
     <Folder Include="js_echo_radar\" />
     <Folder Include="js_echo_radar\js\" />
+    <Folder Include="js_echo_radar_widget\" />
+    <Folder Include="js_echo_radar_widget\css\" />
+    <Folder Include="js_echo_radar_widget\js\" />
     <Folder Include="py_bot\" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +59,10 @@
     <Content Include="js_echo_radar\js\wave.js" />
     <Content Include="js_echo_radar\package.json" />
     <Content Include="js_echo_radar\selftest.js" />
+    <Content Include="js_echo_radar_widget\css\style.css" />
+    <Content Include="js_echo_radar_widget\index.html" />
+    <Content Include="js_echo_radar_widget\js\scenarios.js" />
+    <Content Include="js_echo_radar_widget\js\widget.js" />
     <Content Include="py_bot\env." />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

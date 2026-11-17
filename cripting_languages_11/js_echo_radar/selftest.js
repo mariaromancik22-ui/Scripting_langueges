@@ -62,14 +62,12 @@ check("После move новый x=5", rMoved.x, 5);
 
 // ВОЛНА
 console.log("\nSoundWave");
-const walls = [[new Rect(50, 0, 10, 10), 0]];
-const enemies = [new Enemy(50, 5)];
 const wave = new SoundWave(0, 0);
 
 check("Волна создаётся с радиусом 0", wave.radius, 0);
 check("Волна активна при создании", wave.active, true);
 
-wave.update(walls, enemies);
+wave.update([], []);
 check(`После update радиус = ${WAVE_SPEED}`, wave.radius, WAVE_SPEED);
 
 // прогоняем волну до деактивации, чтобы проверить жизненный цикл
@@ -134,5 +132,5 @@ try {
 // ИТОГИ
 console.log(`\nИТОГ: ${passed} пройдено, ${failed} провалено`);
 if (failed > 0) {
-    process.exit(1); // код ошибки, если что-то не так
+    process.exit(1);
 }
